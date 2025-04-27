@@ -1,0 +1,119 @@
+### ASSIGNMENT REQUESTS
+### GET Assignments all
+GET http://localhost:5000/api/assignments
+
+### GET assignment id
+@assignment_id = 680dfa5f3b3f3bad742124e5
+GET http://localhost:5000/api/assignment/{{assignment_id}}
+
+
+### POST assign project
+@assignment_employee_id = 680ddfcad87108c5ca82669
+@assignment_project_id = 680ddfd7d871068c5ca8266c
+@assignment_date = 2025-03-20T00:00:00.000Z
+POST http://localhost:5000/api/assign_project
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+    "employee_id": "680de30d0a7d82db6280c3e9",
+    "project_id": "680de3060a7d82db6280c3e6",
+    "start_date": "2025-03-20T00:00:00.000Z"
+}
+
+### DELETE assignment
+@assignment_delete_id = 680dfa5f3b3f3bad742124e7
+DELETE http://localhost:5000/api/assignment/{{assignment_delete_id}}
+
+
+
+### EMPLOYEE REQUESTS
+
+### GET employees all
+GET http://localhost:5000/api/employees
+
+### GET employees id
+@employee_get_by_id = 680d659af2d479bc57163b9b
+GET http://localhost:5000/api/employees_id/{{employee_get_by_id}}
+
+### GET employee name
+@employee_get_by_name = Ethan Davis
+GET http://localhost:5000/api/employees/{{employee_get_by_name}}
+
+### Get employee email
+@employee_get_by_email = ethan.davis@example.com
+GET http://localhost:5000/api/employee/{{employee_get_by_email}}
+
+### POST employee
+POST http://localhost:5000/api/employee
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "employee_id": "E052",
+  "full_name": "Ethan Davis",
+  "email": "ethan.davis@example.com",
+  "password": "hashedpass5"
+}
+
+### PUT employee
+@employee_put_id = 680d6960fa5ae54589bece52
+PUT http://localhost:5000/api/employee/{{employee_put_id}}
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "full_name" : "Ethan Davis",
+  "email" :  "ethan.davis123@example.com",
+  "password" :  "hashedpass5"
+}
+
+### DELETE employee
+@employee_delete = 680a89c3f8679cf0489b918e
+DELETE http://localhost:5000/api/employee/{{employee_delete}}
+
+
+### POROJECT REQUESTS
+### GET All projects
+GET http://localhost:5000/api/project
+
+### GET project id
+@project_id = 680825e33b849b0926b71236
+GET http://localhost:5000/api/project/{{project_id}}
+
+### GET project code
+@project_code = 101
+GET http://localhost:5000/api/project_code/{{project_code}}
+
+
+### GET project name
+@project_name = Website Redesign
+GET http://localhost:5000/api/project_name/{{project_name}}
+
+### POST project
+POST http://localhost:5000/api/project
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "project_code" : 1521,
+  "project_name" :  "Project_example",
+  "project_description" :  "project_description"
+}
+
+
+### PUT project
+@project_put_id = 680825e33b849b0926b71236
+PUT http://localhost:5000/api/project/{{project_put_id}}
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "project_code" : 101,
+  "project_name" :  "Website Redesign",
+  "project_description" :  "A full redesign of the company's website with a modern, responsive UI."
+}
+
+### DELETE project id
+@project_delete_id = 68091e9e66224f8556990032
+DELETE http://localhost:5000/api/project/{{project_delete_id}}
