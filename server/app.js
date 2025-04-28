@@ -1,6 +1,7 @@
 import express from 'express';
 import { router } from './src/route/index.js';
 import databaseService from "./src/service/databaseService.js";
+import cors from 'cors';
 
 await databaseService.connect();
 
@@ -12,6 +13,7 @@ app.use(express.static('public'));
 // Use the public folder for static resources
 app.use(express.static('./client/dist'))
 
+app.use(cors({origin: 'http://localhost:5173'}));
 
 app.use(express.json());
 
